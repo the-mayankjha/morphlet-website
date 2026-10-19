@@ -1,0 +1,12 @@
+{
+  "name": "morphlet-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "Mayank Kumar Jha",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check dist/app.js && node --check dist/site.js && node --check dist/releases.js && node --check server.mjs && node scripts/check-site.mjs"
+  }
+}
