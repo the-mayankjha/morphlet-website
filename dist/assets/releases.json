@@ -1,5 +1,165 @@
 [
   {
+    "tag_name": "v1.3.0",
+    "name": "Morphlet v1.3.0",
+    "body": "# Morphlet v1.3.0\n\n## Select files, then tap one key\n\n- On macOS, select files in Finder and press and release Cmd on its own.\n- On Windows, select files in an active File Explorer window and press and release Ctrl on its own.\n- Change the modifier or disable this gesture in Studio \u2192 Settings.\n- Other key combinations and modifier-click selection are excluded from the gesture.\n- Fix installed Windows selection/drag helper packaging by shipping the PowerShell script outside app.asar.\n- Keep Option/Alt-drag as a separate drag gesture.\n\n## GNOME Files integration\n\nIn the installed Linux app, open Studio Settings and choose Install GNOME Files action. Select files in Nautilus, right-click, then Scripts \u2192 Morphlet to open the selected local files directly in the wheel. Requires Python 3. GNOME Wayland restricts global modifier-only capture, so Ctrl-only is not promised there; use the Files action or Studio drag/drop.\n\n## Validation and distribution\n\n51 automated tests pass locally, and the implementation passes macOS Apple Silicon, macOS Intel, Windows x64 and Linux x64 package builds. Windows CI checks the installed helper; trusted macOS builds verify app signatures and DMG contents. Interactive desktop gesture testing is still needed across system configurations.\n\nmacOS packages remain ad-hoc signed without Apple notarization. Windows installers remain unsigned.\n",
+    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v1.3.0",
+    "published_at": "2026-10-19T17:26:45Z",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Morphlet-1.3.0-linux-amd64.deb",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-linux-amd64.deb",
+        "size": 135797852
+      },
+      {
+        "name": "Morphlet-1.3.0-linux-amd64.deb.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-linux-amd64.deb.sha256",
+        "size": 97
+      },
+      {
+        "name": "Morphlet-1.3.0-linux-x86_64.AppImage",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-linux-x86_64.AppImage",
+        "size": 178075063
+      },
+      {
+        "name": "Morphlet-1.3.0-linux-x86_64.AppImage.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-linux-x86_64.AppImage.sha256",
+        "size": 103
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-arm64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-arm64.dmg",
+        "size": 168463601
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-arm64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-arm64.dmg.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-arm64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-arm64.zip",
+        "size": 167980914
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-arm64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-arm64.zip.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-x64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-x64.dmg",
+        "size": 176526966
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-x64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-x64.dmg.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-x64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-x64.zip",
+        "size": 176092112
+      },
+      {
+        "name": "Morphlet-1.3.0-mac-x64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-mac-x64.zip.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.3.0-windows-x64-setup.exe",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-windows-x64-setup.exe",
+        "size": 139928665
+      },
+      {
+        "name": "Morphlet-1.3.0-windows-x64-setup.exe.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.3.0/Morphlet-1.3.0-windows-x64-setup.exe.sha256",
+        "size": 103
+      }
+    ]
+  },
+  {
+    "tag_name": "v1.2.3",
+    "name": "Morphlet v1.2.3",
+    "body": "# Morphlet v1.2.3\n\n## Studio stability on macOS\n\n- Prevent a native appearance notification from recursively rebuilding the Studio glass regions.\n- Skip native material updates when the theme and layout have not changed.\n- Keep file selections and previews stable when updating the glass surface; material-only updates no longer resend the complete Studio state.\n- Avoid assigning an unchanged native window appearance.\n- Add regression tests for repeated appearance notifications, theme switching and sidebar changes.\n\nIncludes the v1.2.2 macOS signature correction and strict app/DMG verification. Mac packages remain ad-hoc signed and unnotarized; Windows packages remain unsigned.\n",
+    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v1.2.3",
+    "published_at": "2026-10-19T00:53:13Z",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Morphlet-1.2.3-linux-amd64.deb",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-linux-amd64.deb",
+        "size": 135794760
+      },
+      {
+        "name": "Morphlet-1.2.3-linux-amd64.deb.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-linux-amd64.deb.sha256",
+        "size": 97
+      },
+      {
+        "name": "Morphlet-1.2.3-linux-x86_64.AppImage",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-linux-x86_64.AppImage",
+        "size": 178070924
+      },
+      {
+        "name": "Morphlet-1.2.3-linux-x86_64.AppImage.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-linux-x86_64.AppImage.sha256",
+        "size": 103
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-arm64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-arm64.dmg",
+        "size": 168461230
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-arm64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-arm64.dmg.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-arm64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-arm64.zip",
+        "size": 167976940
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-arm64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-arm64.zip.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-x64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-x64.dmg",
+        "size": 176533679
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-x64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-x64.dmg.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-x64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-x64.zip",
+        "size": 176086965
+      },
+      {
+        "name": "Morphlet-1.2.3-mac-x64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-mac-x64.zip.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.2.3-windows-x64-setup.exe",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-windows-x64-setup.exe",
+        "size": 139926143
+      },
+      {
+        "name": "Morphlet-1.2.3-windows-x64-setup.exe.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.3/Morphlet-1.2.3-windows-x64-setup.exe.sha256",
+        "size": 103
+      }
+    ]
+  },
+  {
     "tag_name": "v1.2.2",
     "name": "Morphlet v1.2.2",
     "body": "# Morphlet v1.2.2\n\n## macOS packaging fix\n\n- Fix incomplete app-bundle signatures that could cause macOS to report Morphlet as damaged or corrupted even when the DMG checksum was valid.\n- Explicitly ad-hoc sign the app and nested code, with the Electron entitlements required for this signing mode.\n- Verify the packaged app with strict, recursive code-signature validation before uploading artifacts.\n- Verify each DMG checksum, mount it read-only, and verify the app inside before publication.\n\n## Downloads\n\nIncludes Apple Silicon and Intel macOS DMG/ZIP packages, a Windows x64 installer, and Linux x64 AppImage/DEB packages. SHA-256 checksum files accompany the downloads.\n\nAd-hoc signing provides bundle integrity, not an Apple Developer ID. macOS builds remain unnotarized and may still be blocked by Gatekeeper. Windows installers remain unsigned. This release does not change Windows or Linux application behavior.\n",
@@ -715,246 +875,6 @@
       {
         "name": "Morphlet-0.7.2-windows-x64-setup.exe.sha256",
         "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.2/Morphlet-0.7.2-windows-x64-setup.exe.sha256",
-        "size": 103
-      }
-    ]
-  },
-  {
-    "tag_name": "v0.7.1",
-    "name": "Morphlet v0.7.1",
-    "body": "# Morphlet v0.7.1\n\nFix original PDF text detection when a visible line is split across adjacent text-show operations. The editor now maps the combined line and removes every original operation before writing replacement text.\n\nEdit PDF now opens with Edit text enabled, so supported original text regions are immediately selectable. Read-only page messages distinguish unsupported layouts from scanned text.\n\nValidation: 39 automated tests passed, including a fragmented-content regression that verifies actual saved text replacement and surrounding text preservation. Native desktop checks passed for editing on open, replacement, annotations and saved-file reopening in both themes.\n",
-    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.7.1",
-    "published_at": "2026-10-18T22:34:48Z",
-    "prerelease": false,
-    "assets": [
-      {
-        "name": "Morphlet-0.7.1-linux-amd64.deb",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-linux-amd64.deb",
-        "size": 135784708
-      },
-      {
-        "name": "Morphlet-0.7.1-linux-amd64.deb.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-linux-amd64.deb.sha256",
-        "size": 97
-      },
-      {
-        "name": "Morphlet-0.7.1-linux-x86_64.AppImage",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-linux-x86_64.AppImage",
-        "size": 178062903
-      },
-      {
-        "name": "Morphlet-0.7.1-linux-x86_64.AppImage.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-linux-x86_64.AppImage.sha256",
-        "size": 103
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-arm64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-arm64.dmg",
-        "size": 168415306
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-arm64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-arm64.dmg.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-arm64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-arm64.zip",
-        "size": 167938198
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-arm64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-arm64.zip.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-x64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-x64.dmg",
-        "size": 174317310
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-x64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-x64.dmg.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-x64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-x64.zip",
-        "size": 173883156
-      },
-      {
-        "name": "Morphlet-0.7.1-mac-x64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-mac-x64.zip.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.7.1-windows-x64-setup.exe",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-windows-x64-setup.exe",
-        "size": 139917168
-      },
-      {
-        "name": "Morphlet-0.7.1-windows-x64-setup.exe.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.1/Morphlet-0.7.1-windows-x64-setup.exe.sha256",
-        "size": 103
-      }
-    ]
-  },
-  {
-    "tag_name": "v0.7.0",
-    "name": "Morphlet v0.7.0",
-    "body": "# Morphlet v0.7.0\n\nStudio now has separate Edit and Annotate tools, a cleaner contextual inspector, and an annotation sidebar.\n\n- Replace or delete supported original PDF text without covering the page background.\n- Add native comments, highlights, underlines, strikeouts, freehand ink and rectangles.\n- Reopen, update and delete supported saved annotations without duplicating them.\n- Open converted PDF results directly in the editor.\n- Keep advanced geometry and page actions tucked away until needed.\n\nText replacement supports conservatively mapped horizontal text runs using standard replacement fonts. Complex or scanned text remains read-only. Paragraph reflow and secure redaction are not included.\n\nValidation: 38 automated tests passed, plus native desktop checks for text replacement, annotations, saved-file reopening, light/dark themes, images, links, page operations, forms and signatures.\n",
-    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.7.0",
-    "published_at": "2026-10-18T22:26:45Z",
-    "prerelease": false,
-    "assets": [
-      {
-        "name": "Morphlet-0.7.0-linux-amd64.deb",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-linux-amd64.deb",
-        "size": 135785168
-      },
-      {
-        "name": "Morphlet-0.7.0-linux-amd64.deb.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-linux-amd64.deb.sha256",
-        "size": 97
-      },
-      {
-        "name": "Morphlet-0.7.0-linux-x86_64.AppImage",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-linux-x86_64.AppImage",
-        "size": 178062964
-      },
-      {
-        "name": "Morphlet-0.7.0-linux-x86_64.AppImage.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-linux-x86_64.AppImage.sha256",
-        "size": 103
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-arm64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-arm64.dmg",
-        "size": 168414806
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-arm64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-arm64.dmg.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-arm64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-arm64.zip",
-        "size": 167937915
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-arm64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-arm64.zip.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-x64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-x64.dmg",
-        "size": 174316834
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-x64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-x64.dmg.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-x64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-x64.zip",
-        "size": 173882966
-      },
-      {
-        "name": "Morphlet-0.7.0-mac-x64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-mac-x64.zip.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.7.0-windows-x64-setup.exe",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-windows-x64-setup.exe",
-        "size": 139916525
-      },
-      {
-        "name": "Morphlet-0.7.0-windows-x64-setup.exe.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.7.0/Morphlet-0.7.0-windows-x64-setup.exe.sha256",
-        "size": 103
-      }
-    ]
-  },
-  {
-    "tag_name": "v0.6.0",
-    "name": "Morphlet v0.6.0",
-    "body": "# Morphlet 0.6.0 \u2014 PDF editing in Studio\n\nSelect a PDF in Studio and choose Edit PDF to open the new editing workspace.\n\n- Add selectable text, images, real clickable links, translucent highlights, outlined rectangles and drawn signatures.\n- Drag/resize additions; adjust fonts, sizes, bold/italic and colors; preserve image proportions; duplicate, layer and delete additions.\n- Undo/redo and keyboard shortcuts, page navigation, zoom and embedded-text search.\n- Rotate/reorder/duplicate/delete ordinary pages, insert blank pages and merge ordinary PDFs.\n- Fill standard interactive text, checkbox, dropdown, radio and option-list form fields.\n- Save to a new edited copy, preserving the source; results appear in Studio history.\n\nValidation: 35 automated tests; native desktop checks covering editing, images, links, both themes, undo/redo, page operations, merging, search, actual saved nine-page PDFs, form values/widget appearances, signatures and saved-PDF rendering.\n\nThis release adds content over existing pages. Embedded paragraph replacement/reflow, secure redaction, certificate signing, XFA and encryption management are not included. Drawn signatures are visual marks. Standard text fonts support Latin characters. Interactive-form pages must be retained exactly once; their duplication/deletion and interactive-form merging are blocked to protect field relationships. Drafts remain session-local.\n",
-    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.6.0",
-    "published_at": "2026-10-18T22:12:15Z",
-    "prerelease": false,
-    "assets": [
-      {
-        "name": "Morphlet-0.6.0-linux-amd64.deb",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-linux-amd64.deb",
-        "size": 135778520
-      },
-      {
-        "name": "Morphlet-0.6.0-linux-amd64.deb.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-linux-amd64.deb.sha256",
-        "size": 97
-      },
-      {
-        "name": "Morphlet-0.6.0-linux-x86_64.AppImage",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-linux-x86_64.AppImage",
-        "size": 178059137
-      },
-      {
-        "name": "Morphlet-0.6.0-linux-x86_64.AppImage.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-linux-x86_64.AppImage.sha256",
-        "size": 103
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-arm64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-arm64.dmg",
-        "size": 168410886
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-arm64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-arm64.dmg.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-arm64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-arm64.zip",
-        "size": 167929404
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-arm64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-arm64.zip.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-x64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-x64.dmg",
-        "size": 174296347
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-x64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-x64.dmg.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-x64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-x64.zip",
-        "size": 173873872
-      },
-      {
-        "name": "Morphlet-0.6.0-mac-x64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-mac-x64.zip.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.6.0-windows-x64-setup.exe",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-windows-x64-setup.exe",
-        "size": 139911041
-      },
-      {
-        "name": "Morphlet-0.6.0-windows-x64-setup.exe.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-windows-x64-setup.exe.sha256",
         "size": 103
       }
     ]
