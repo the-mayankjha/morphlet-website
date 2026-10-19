@@ -1,5 +1,85 @@
 [
   {
+    "tag_name": "v1.2.2",
+    "name": "Morphlet v1.2.2",
+    "body": "# Morphlet v1.2.2\n\n## macOS packaging fix\n\n- Fix incomplete app-bundle signatures that could cause macOS to report Morphlet as damaged or corrupted even when the DMG checksum was valid.\n- Explicitly ad-hoc sign the app and nested code, with the Electron entitlements required for this signing mode.\n- Verify the packaged app with strict, recursive code-signature validation before uploading artifacts.\n- Verify each DMG checksum, mount it read-only, and verify the app inside before publication.\n\n## Downloads\n\nIncludes Apple Silicon and Intel macOS DMG/ZIP packages, a Windows x64 installer, and Linux x64 AppImage/DEB packages. SHA-256 checksum files accompany the downloads.\n\nAd-hoc signing provides bundle integrity, not an Apple Developer ID. macOS builds remain unnotarized and may still be blocked by Gatekeeper. Windows installers remain unsigned. This release does not change Windows or Linux application behavior.\n",
+    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v1.2.2",
+    "published_at": "2026-10-19T00:21:00Z",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Morphlet-1.2.2-linux-amd64.deb",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-linux-amd64.deb",
+        "size": 135794148
+      },
+      {
+        "name": "Morphlet-1.2.2-linux-amd64.deb.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-linux-amd64.deb.sha256",
+        "size": 97
+      },
+      {
+        "name": "Morphlet-1.2.2-linux-x86_64.AppImage",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-linux-x86_64.AppImage",
+        "size": 178070932
+      },
+      {
+        "name": "Morphlet-1.2.2-linux-x86_64.AppImage.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-linux-x86_64.AppImage.sha256",
+        "size": 103
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-arm64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-arm64.dmg",
+        "size": 168461017
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-arm64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-arm64.dmg.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-arm64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-arm64.zip",
+        "size": 167976250
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-arm64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-arm64.zip.sha256",
+        "size": 95
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-x64.dmg",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-x64.dmg",
+        "size": 176532882
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-x64.dmg.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-x64.dmg.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-x64.zip",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-x64.zip",
+        "size": 176087073
+      },
+      {
+        "name": "Morphlet-1.2.2-mac-x64.zip.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-mac-x64.zip.sha256",
+        "size": 93
+      },
+      {
+        "name": "Morphlet-1.2.2-windows-x64-setup.exe",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-windows-x64-setup.exe",
+        "size": 139925846
+      },
+      {
+        "name": "Morphlet-1.2.2-windows-x64-setup.exe.sha256",
+        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v1.2.2/Morphlet-1.2.2-windows-x64-setup.exe.sha256",
+        "size": 103
+      }
+    ]
+  },
+  {
     "tag_name": "v1.2.1",
     "name": "Morphlet v1.2.1",
     "body": "# Morphlet v1.2.1\n\nRestore solid monochrome backgrounds for the Studio document preview and conversion controls. The collapsible sidebar retains its glass effect. Dark/light native layout checks passed with no panel gaps or overflow.\n",
@@ -482,7 +562,7 @@
   {
     "tag_name": "v0.8.0",
     "name": "Morphlet v0.8.0",
-    "body": "# Morphlet v0.8.0\n\n## Original PDF images\n\nClick a supported embedded image in Studio’s PDF editor, then choose Remove image or Replace image. Replacements preserve proportions and fit inside the original bounds. Undo restores removals; Restore original reverts replacements.\n\nOnly the selected placement changes, so other uses of a shared image remain intact. Image and original-text edits can be saved together. Originals are never overwritten.\n\nThis release supports page-level, axis-aligned raster image XObjects. Inline images, masks, clipped images, arbitrary rotations and images nested in Form artwork remain unsupported. Removing content is not secure redaction.\n\n## Documentation\n\nThe README now has a quick start, navigation links, grouped workflows, detailed text/image editing instructions, current platform behavior, and clearer conversion and editing limits.\n\n## Validation\n\n40 automated tests passed. Saved-file tests verify replacement pixels, original removal, shared placements, combined text edits and invalid selections. Native desktop checks passed for image selection, removal, undo, replacement and saving without duplicate images. README local links and anchors were checked.\n",
+    "body": "# Morphlet v0.8.0\n\n## Original PDF images\n\nClick a supported embedded image in Studio\u2019s PDF editor, then choose Remove image or Replace image. Replacements preserve proportions and fit inside the original bounds. Undo restores removals; Restore original reverts replacements.\n\nOnly the selected placement changes, so other uses of a shared image remain intact. Image and original-text edits can be saved together. Originals are never overwritten.\n\nThis release supports page-level, axis-aligned raster image XObjects. Inline images, masks, clipped images, arbitrary rotations and images nested in Form artwork remain unsupported. Removing content is not secure redaction.\n\n## Documentation\n\nThe README now has a quick start, navigation links, grouped workflows, detailed text/image editing instructions, current platform behavior, and clearer conversion and editing limits.\n\n## Validation\n\n40 automated tests passed. Saved-file tests verify replacement pixels, original removal, shared placements, combined text edits and invalid selections. Native desktop checks passed for image selection, removal, undo, replacement and saving without duplicate images. README local links and anchors were checked.\n",
     "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.8.0",
     "published_at": "2026-10-18T22:40:36Z",
     "prerelease": false,
@@ -802,7 +882,7 @@
   {
     "tag_name": "v0.6.0",
     "name": "Morphlet v0.6.0",
-    "body": "# Morphlet 0.6.0 — PDF editing in Studio\n\nSelect a PDF in Studio and choose Edit PDF to open the new editing workspace.\n\n- Add selectable text, images, real clickable links, translucent highlights, outlined rectangles and drawn signatures.\n- Drag/resize additions; adjust fonts, sizes, bold/italic and colors; preserve image proportions; duplicate, layer and delete additions.\n- Undo/redo and keyboard shortcuts, page navigation, zoom and embedded-text search.\n- Rotate/reorder/duplicate/delete ordinary pages, insert blank pages and merge ordinary PDFs.\n- Fill standard interactive text, checkbox, dropdown, radio and option-list form fields.\n- Save to a new edited copy, preserving the source; results appear in Studio history.\n\nValidation: 35 automated tests; native desktop checks covering editing, images, links, both themes, undo/redo, page operations, merging, search, actual saved nine-page PDFs, form values/widget appearances, signatures and saved-PDF rendering.\n\nThis release adds content over existing pages. Embedded paragraph replacement/reflow, secure redaction, certificate signing, XFA and encryption management are not included. Drawn signatures are visual marks. Standard text fonts support Latin characters. Interactive-form pages must be retained exactly once; their duplication/deletion and interactive-form merging are blocked to protect field relationships. Drafts remain session-local.\n",
+    "body": "# Morphlet 0.6.0 \u2014 PDF editing in Studio\n\nSelect a PDF in Studio and choose Edit PDF to open the new editing workspace.\n\n- Add selectable text, images, real clickable links, translucent highlights, outlined rectangles and drawn signatures.\n- Drag/resize additions; adjust fonts, sizes, bold/italic and colors; preserve image proportions; duplicate, layer and delete additions.\n- Undo/redo and keyboard shortcuts, page navigation, zoom and embedded-text search.\n- Rotate/reorder/duplicate/delete ordinary pages, insert blank pages and merge ordinary PDFs.\n- Fill standard interactive text, checkbox, dropdown, radio and option-list form fields.\n- Save to a new edited copy, preserving the source; results appear in Studio history.\n\nValidation: 35 automated tests; native desktop checks covering editing, images, links, both themes, undo/redo, page operations, merging, search, actual saved nine-page PDFs, form values/widget appearances, signatures and saved-PDF rendering.\n\nThis release adds content over existing pages. Embedded paragraph replacement/reflow, secure redaction, certificate signing, XFA and encryption management are not included. Drawn signatures are visual marks. Standard text fonts support Latin characters. Interactive-form pages must be retained exactly once; their duplication/deletion and interactive-form merging are blocked to protect field relationships. Drafts remain session-local.\n",
     "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.6.0",
     "published_at": "2026-10-18T22:12:15Z",
     "prerelease": false,
@@ -875,86 +955,6 @@
       {
         "name": "Morphlet-0.6.0-windows-x64-setup.exe.sha256",
         "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.6.0/Morphlet-0.6.0-windows-x64-setup.exe.sha256",
-        "size": 103
-      }
-    ]
-  },
-  {
-    "tag_name": "v0.5.0",
-    "name": "Morphlet v0.5.0",
-    "body": "# Morphlet 0.5.0 — SVG export and image fidelity\n\n- Raster images can export to SVG. Default lossless mode embeds PNG pixels; Studio also offers editable-path tracing for logos and illustrations.\n- Vector tracing runs in a background worker, supports Studio cancellation, and is limited to 1 megapixel after edits. Its 64-color approximation can change appearance; lossless mode retains raster detail.\n- SVG-to-image conversion rasterizes at the requested width for sharp larger output, including transparency where the destination supports it.\n- Quality defaults to 100. PNG avoids palette quantization; TIFF uses LZW; WebP/AVIF use lossless encoder modes at 100; JPEG uses 4:4:4 chroma but remains lossy. Original resolution and ICC profiles are retained where supported.\n- SVG output previews work in Studio and the quick wheel.\n\nValidated with 31 tests, including exact tested pixel comparisons, high-resolution SVG rasterization, real vector path output, and native Studio mode selection, tracing and preview checks. A raster-to-SVG container cannot add detail to a source image, and tracing is not pixel-perfect.\n",
-    "html_url": "https://github.com/the-mayankjha/morphlet/releases/tag/v0.5.0",
-    "published_at": "2026-10-18T21:56:59Z",
-    "prerelease": false,
-    "assets": [
-      {
-        "name": "Morphlet-0.5.0-linux-amd64.deb",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-linux-amd64.deb",
-        "size": 133954824
-      },
-      {
-        "name": "Morphlet-0.5.0-linux-amd64.deb.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-linux-amd64.deb.sha256",
-        "size": 97
-      },
-      {
-        "name": "Morphlet-0.5.0-linux-x86_64.AppImage",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-linux-x86_64.AppImage",
-        "size": 173408789
-      },
-      {
-        "name": "Morphlet-0.5.0-linux-x86_64.AppImage.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-linux-x86_64.AppImage.sha256",
-        "size": 103
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-arm64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-arm64.dmg",
-        "size": 163908692
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-arm64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-arm64.dmg.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-arm64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-arm64.zip",
-        "size": 163392065
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-arm64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-arm64.zip.sha256",
-        "size": 95
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-x64.dmg",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-x64.dmg",
-        "size": 169781964
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-x64.dmg.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-x64.dmg.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-x64.zip",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-x64.zip",
-        "size": 169334856
-      },
-      {
-        "name": "Morphlet-0.5.0-mac-x64.zip.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-mac-x64.zip.sha256",
-        "size": 93
-      },
-      {
-        "name": "Morphlet-0.5.0-windows-x64-setup.exe",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-windows-x64-setup.exe",
-        "size": 137232188
-      },
-      {
-        "name": "Morphlet-0.5.0-windows-x64-setup.exe.sha256",
-        "browser_download_url": "https://github.com/the-mayankjha/morphlet/releases/download/v0.5.0/Morphlet-0.5.0-windows-x64-setup.exe.sha256",
         "size": 103
       }
     ]
